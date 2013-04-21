@@ -1,3 +1,11 @@
+/************************************************************************
+  CalculadoraGrafica.java
+
+  Interfaz grafica de la practica 4: calculadora de expresiones
+
+  Jorge Roldan Lopez
+************************************************************************/
+
 import java.awt.event.*;
 import javax.swing.*;
 import java.awt.*;

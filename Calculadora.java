@@ -1,3 +1,11 @@
+/************************************************************************
+  Calculadora.java
+
+  Calculadora que nos facilita el uso de expresion y valoracion
+
+  Jorge Roldan Lopez
+************************************************************************/
+
 public class Calculadora
 {
 	private Expresion exp;

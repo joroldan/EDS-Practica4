@@ -1,3 +1,11 @@
+/************************************************************************
+  Suma.java
+
+  Expresion que suma dos expresiones
+
+  Jorge Roldan Lopez
+************************************************************************/
+
 public class Suma extends ExpBinaria
 {
 	public Suma(Expresion e1, Expresion e2)

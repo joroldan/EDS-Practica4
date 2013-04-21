@@ -1,3 +1,11 @@
+/************************************************************************
+  Producto.java
+
+  Expresion que multiplica dos expresiones
+
+  Jorge Roldan Lopez
+************************************************************************/
+
 public class Producto extends ExpBinaria
 {
 	public Producto(Expresion e1, Expresion e2)

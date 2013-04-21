@@ -1,3 +1,11 @@
+/************************************************************************
+  Opuesto.java
+
+  Expresion que toma el valor negativo de exp
+
+  Jorge Roldan Lopez
+************************************************************************/
+
 import java.util.ArrayList;
 
 public class Opuesto extends Expresion

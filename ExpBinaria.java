@@ -1,3 +1,11 @@
+/************************************************************************
+  ExpBinaria.java
+
+  Expresion que relacion dos expresiones
+
+  Jorge Roldan Lopez
+************************************************************************/
+
 import java.util.ArrayList;
 import java.util.List;
 

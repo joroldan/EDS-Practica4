@@ -1,3 +1,11 @@
+/************************************************************************
+  ExpAtomica.java
+
+  Expresion de una unica variable o de un valor concreto
+
+  Jorge Roldan Lopez
+************************************************************************/
+
 public class ExpAtomica extends Expresion
 {
 	private int valor;

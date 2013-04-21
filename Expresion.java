@@ -1,3 +1,11 @@
+/************************************************************************
+  Expresion.java
+
+  Guarda una lista de variables y nos da metodos para usarla
+
+  Jorge Roldan Lopez
+************************************************************************/
+
 import java.util.ArrayList;
 import java.util.List;
 

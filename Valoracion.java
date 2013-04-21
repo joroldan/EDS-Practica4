@@ -1,3 +1,11 @@
+/************************************************************************
+  Valoracion.java
+
+  Clase valoracion que guarda nombre variable y valor
+
+  Jorge Roldan Lopez
+************************************************************************/
+
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Set;
