@@ -166,17 +166,23 @@ public class CalculadoraGrafica implements ActionListener
 				{
 					tfres.setText("Error: variable no declarada");
 					tfres.requestFocus(); //Para si lo hacemos pulsando enter
-					JOptionPane.showMessageDialog(null, "¡ERROR! \n" + e.getMessage());
+					JOptionPane.showMessageDialog(null, "¡ERROR! \n" + e.getMessage(), "Error en variable", JOptionPane.ERROR_MESSAGE);
 				}
 			}
 			catch (NumberFormatException e)
 			{
 				tfres.setText("Error en la expresion");
 				tfres.requestFocus(); //Para si lo hacemos pulsando enter
-				JOptionPane.showMessageDialog(null, "¡ERROR! \n No se ha podido entender la expresion.");
+				JOptionPane.showMessageDialog(null, "¡ERROR! \n No se ha podido entender la expresion.", "Error en expresion", JOptionPane.ERROR_MESSAGE);
+			}
+			catch (Exception e)
+			{
+				tfres.setText("Error en la expresion");
+				tfres.requestFocus(); //Para si lo hacemos pulsando enter
+				JOptionPane.showMessageDialog(null, "¡ERROR!\n Error desconocido en la expresion", "Error en expresion", JOptionPane.ERROR_MESSAGE);
 			}
 		}
-		else tfres.setText("...");;
+		else tfres.setText("No hay expresion");;
 	}
 
 	private void sustituir()
@@ -198,15 +204,22 @@ public class CalculadoraGrafica implements ActionListener
 				if (!sz.equals("")) exp.sustituir("z", Integer.parseInt(sz));
 
 				tfexp.setText(exp.toString());
-				tfres.setText("Variables sustituidas");
+				tfres.setText("Variables declaradas sustituidas");
 			}
 			catch (NumberFormatException e)
 			{
 				tfres.setText("Error en la expresion");
 				tfres.requestFocus(); //Para si lo hacemos pulsando enter
-				JOptionPane.showMessageDialog(null, "¡ERROR! \n No se ha podido entender la expresion.");
+				JOptionPane.showMessageDialog(null, "¡ERROR! \n No se ha podido entender la expresion.", "Error en expresion", JOptionPane.ERROR_MESSAGE);
+			}
+			catch (Exception e)
+			{
+				tfres.setText("Error en la expresion");
+				tfres.requestFocus(); //Para si lo hacemos pulsando enter
+				JOptionPane.showMessageDialog(null, "¡ERROR!\n Error desconocido en la expresion", "Error en expresion", JOptionPane.ERROR_MESSAGE);
 			}
 		}
+		else JOptionPane.showMessageDialog(null, "No se ha encontrado ninguna expresion.", "Falta expresion", JOptionPane.INFORMATION_MESSAGE);
     }
 
 	private void reset()
@@ -270,23 +283,17 @@ public class CalculadoraGrafica implements ActionListener
 					String s2=s.substring(i1+1, s.length());
 					return new Suma(parser(s1),parser(s2));
 				}
-				else
+				else if (i2!=-1)
 				{
-					if (i2!=-1)
-					{
-						String s1=s.substring(0,i2);
-						String s2=s.substring(i2+1, s.length());
-						return new Producto(parser(s1),parser(s2));
-					}
-					else
-					{
-						if (s.equals("x")||s.equals("y")||s.equals("z"))
-						{
-							return new ExpAtomica(s);
-						}
-						else return new ExpAtomica(Integer.parseInt(s));
-					}
+					String s1=s.substring(0,i2);
+					String s2=s.substring(i2+1, s.length());
+					return new Producto(parser(s1),parser(s2));
 				}
+				else if (s.equals("x")||s.equals("y")||s.equals("z"))
+				{
+					return new ExpAtomica(s);
+				}
+				else return new ExpAtomica(Integer.parseInt(s));
 			}
 		}
 	}
