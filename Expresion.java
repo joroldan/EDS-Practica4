@@ -15,4 +15,19 @@ public abstract class Expresion
 	public abstract void sustituir(String v, int n);
 
 	public abstract void renombrar(String v1, String v2);
+
+	public int numVariables()
+	{
+		return variables.size();
+	}
+
+	public boolean calculable(Valoracion val)
+	{
+		for (String s: variables)
+		{
+			if(!val.estaValorada(s)) return false;
+		}
+
+		return true;
+	}
 }
