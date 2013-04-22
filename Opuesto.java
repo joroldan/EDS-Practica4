@@ -26,8 +26,11 @@ public class Opuesto extends Expresion
 
 	public void sustituir(String v, int n)
 	{
-		exp.sustituir(v,n);
-		variables.remove(v);
+		if (variables.contains(v))
+		{
+			exp.sustituir(v,n);
+			variables.remove(v);
+		}
 	}
 
 	public Expresion copiar()

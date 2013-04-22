@@ -30,9 +30,12 @@ public abstract class ExpBinaria extends Expresion
 
 	public void sustituir(String v, int n)
 	{
-		exp1.sustituir(v,n);
-		exp2.sustituir(v,n);
-		variables.remove(v);
+		if (variables.contains(v))
+		{
+			exp1.sustituir(v,n);
+			exp2.sustituir(v,n);
+			variables.remove(v);
+		}
 	}
 
 	public abstract Expresion copiar();
