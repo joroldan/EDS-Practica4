@@ -38,4 +38,6 @@ public abstract class Expresion
 
 		return true;
 	}
+
+	public abstract Expresion copiar();
 }

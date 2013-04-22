@@ -16,8 +16,8 @@ public abstract class ExpBinaria extends Expresion
 	public ExpBinaria(Expresion e1, Expresion e2)
 	{
 		super();
-		this.exp1 = e1;
-		this.exp2 = e2;
+		this.exp1 = e1.copiar();
+		this.exp2 = e2.copiar();
 		variables.addAll(e1.variables);
 		List<String> l = e2.variables;
 		for (String s : l)

@@ -15,7 +15,7 @@ public class Opuesto extends Expresion
 	public Opuesto(Expresion e)
 	{
 		super();
-		this.exp = e;
+		this.exp = e.copiar();
 		variables.addAll(e.variables);
 	}
 
