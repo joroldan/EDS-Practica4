@@ -8,12 +8,12 @@
 
 public class Calculadora
 {
-	private Expresion exp;
+	private Expresion  exp;
 	private Valoracion val;
 
 	public Calculadora()
 	{
-		this.exp = null;
+		this.exp = new ExpAtomica(0);
 		this.val = new Valoracion();
 	}
 
@@ -41,6 +41,14 @@ public class Calculadora
 	public void darValorVariable(String v)
 	{
 		exp.sustituir(v, val.valorVariable(v));
+	}
+
+	public void darValorVariables()
+	{
+		for (String v: val.getVariables())
+		{
+			exp.sustituir(v, val.valorVariable(v));
+		}
 	}
 
 	public void renombrarVariable(String v1, String v2)

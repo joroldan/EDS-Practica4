@@ -71,6 +71,6 @@ public class ExpAtomica extends Expresion
 		{
 			return new String(variables.get(0));
 		}
-		else return "" + valor;
+		else return Integer.toString(valor);
 	}
 }

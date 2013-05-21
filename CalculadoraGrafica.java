@@ -20,7 +20,7 @@ public class CalculadoraGrafica implements ActionListener
 		//En el constructor se crean las componentes gráficas
 		JFrame f = new JFrame(); //Objeto JFrame que contendrá todas las componentes gráficas
 		f.setTitle("Calculadora");
-		f.setMinimumSize(new Dimension(280, 450));
+		f.setMinimumSize(new Dimension(285, 460));
 		f.setLocation(50,50);
 		f.getContentPane().setLayout(null); //El JFrame estará dividido en tres paneles
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -38,11 +38,11 @@ public class CalculadoraGrafica implements ActionListener
 		panel1.add(l1);
 
 		tfexp = new JTextField(); //Campo de texto para introducir la expresion
-        tfexp.setBounds(17, 35, 205, 30);
+        tfexp.setBounds(17, 35, 203, 30);
 		panel1.add(tfexp);
 
 		JButton b = new JButton("C");
-			b.addActionListener(this); b.setBounds(222, 30, 40, 40);
+			b.addActionListener(this); b.setBounds(222, 30, 42, 40);
 			 panel1.add(b);
 
 		JPanel panel11 = new JPanel();
@@ -181,13 +181,13 @@ public class CalculadoraGrafica implements ActionListener
 			{
 				tfres.setText("Error en la expresion");
 				tfres.requestFocus(); //Para si lo hacemos pulsando enter
-				JOptionPane.showMessageDialog(null, "¡ERROR! \n No se ha podido entender la expresion.", "Error en expresion", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "ERROR! \n No se ha podido entender la expresion.", "Error en expresion", JOptionPane.ERROR_MESSAGE);
 			}
 			catch (Exception e)
 			{
 				tfres.setText("Error en la expresion");
 				tfres.requestFocus(); //Para si lo hacemos pulsando enter
-				JOptionPane.showMessageDialog(null, "¡ERROR!\n Error desconocido en la expresion", "Error en expresion", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "ERROR!\n Error desconocido en la expresion", "Error en expresion", JOptionPane.ERROR_MESSAGE);
 			}
 		}
 		else tfres.setText("No hay expresion");;
@@ -218,13 +218,13 @@ public class CalculadoraGrafica implements ActionListener
 			{
 				tfres.setText("Error en la expresion");
 				tfres.requestFocus(); //Para si lo hacemos pulsando enter
-				JOptionPane.showMessageDialog(null, "¡ERROR! \n No se ha podido entender la expresion.", "Error en expresion", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "ERROR! \n No se ha podido entender la expresion.", "Error en expresion", JOptionPane.ERROR_MESSAGE);
 			}
 			catch (Exception e)
 			{
 				tfres.setText("Error en la expresion");
 				tfres.requestFocus(); //Para si lo hacemos pulsando enter
-				JOptionPane.showMessageDialog(null, "¡ERROR!\n Error desconocido en la expresion", "Error en expresion", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "ERROR!\n Error desconocido en la expresion", "Error en expresion", JOptionPane.ERROR_MESSAGE);
 			}
 		}
 		else JOptionPane.showMessageDialog(null, "No se ha encontrado ninguna expresion.", "Falta expresion", JOptionPane.INFORMATION_MESSAGE);

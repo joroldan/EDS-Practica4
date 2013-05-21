@@ -19,6 +19,11 @@ public class Valoracion
 		this.var = new HashMap<String, Integer>();
 	}
 
+	public Set<String> getVariables()
+	{
+		return this.var.keySet();
+	}
+
 	public void add(String v, int n)
 	{
 		this.var.put(v,n);
